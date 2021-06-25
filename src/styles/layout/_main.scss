@@ -1,0 +1,6 @@
+main{
+    height: 100%;
+    display: grid;
+    grid-template-columns: 300px 2fr minmax(300px, 1fr);
+    grid-template-rows: 1fr;
+}

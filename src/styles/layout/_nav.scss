@@ -1,0 +1,50 @@
+nav{
+    font-size: 19px;
+    font-weight: 400;
+    background: $nav-color;
+    display: grid;
+    grid-template-columns: 300px 1fr;
+
+    .title{
+        padding: 1em;
+        text-align: left;
+        border-right: 1px solid $background-color;
+    }
+
+    .task-bar{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .project-name{
+            padding: 1em;
+        }
+
+        .control{
+            display: flex;
+            padding-right: 1em;
+
+            &>*{
+                margin-right: 0.5em;
+                border-radius: 300px;
+                background: $nav-color;
+                transition: all 0.2s;
+                padding: 2px 5px 0 5px;
+
+                &:hover{
+                    background: $background-color;
+                }
+            }
+
+            &>*:last-child{
+                margin-right: 0;
+            }
+
+            svg{
+                height: 40px;
+                width: auto;
+                cursor: pointer;
+            }
+        }
+    }
+}

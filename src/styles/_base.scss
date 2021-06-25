@@ -1,0 +1,22 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    color: $font-color;
+    font-family: 'Quicksand', sans-serif;   
+}
+
+html, body{
+    height: 100%;
+}
+
+body{
+    background: $background-color;
+
+    .container{
+        height: 100%;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: auto 1fr;
+    }
+}
