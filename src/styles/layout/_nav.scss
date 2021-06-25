@@ -29,7 +29,6 @@ nav{
                 border-radius: 300px;
                 background: $nav-color;
                 transition: all 0.2s;
-                padding: 2px 5px 0 5px;
 
                 &:hover{
                     background: $background-color;
@@ -41,9 +40,14 @@ nav{
             }
 
             svg{
+                display: block;
                 height: 40px;
                 width: auto;
                 cursor: pointer;
+
+                &:hover{
+                    stroke: $accent-color;
+                }
             }
         }
     }

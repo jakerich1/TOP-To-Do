@@ -8,7 +8,7 @@ module.exports = {
         nav: './src/components/nav.js',
         projects: './src/components/projects.js',
         tasks: './src/components/tasks.js',
-        details: '.src/components/details.js',
+        details: './src/components/details.js',
     },
     devtool: 'inline-source-map',
     plugins: [
