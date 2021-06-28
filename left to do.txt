@@ -1,0 +1,11 @@
+Change task details on input
+
+Highlighting for the selected task
+
+Task deletion
+
+Project deletion
+
+Table sorting
+
+Method to manage local storage

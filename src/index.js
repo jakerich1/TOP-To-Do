@@ -5,7 +5,7 @@ import projects from './components/projects.js'
 import tasks from './components/tasks.js'
 import details from './components/details.js'
 import { project } from './class/project.js'
-import task from './class/task';
+import { task } from './class/task';
 
 function component() {
 

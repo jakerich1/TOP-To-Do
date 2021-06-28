@@ -22,6 +22,8 @@ export default function projects() {
     modalSubmit.innerText = "Submit"
     modalSubmit.addEventListener('click', function () {
         let name = modalInput.value
+        modal.style.display = "none";
+        modalInput.value = ""
         createProjectListener(name)
     })
     modalCont.appendChild(modalSubmit)
@@ -67,24 +69,7 @@ export default function projects() {
 
     //Project List
     const list = document.createElement('ul')
-    const li1 = document.createElement('li')
-    li1.classList.add('active')
-    li1.innerText = "The Odin Project"
-    list.appendChild(li1)
-
-    const li2 = document.createElement('li')
-    li2.innerText = "Map Tool"
-    list.appendChild(li2)
-
-    const li3 = document.createElement('li')
-    li3.innerText = "OAC Report"
-    list.appendChild(li3)
-
-    const li4 = document.createElement('li')
-    li4.innerText = "Church and Castle"
-    list.appendChild(li4)
-
-
+    list.id = 'project-list'
     projects.appendChild(list)
 
     return projects

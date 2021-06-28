@@ -14,8 +14,9 @@ export default function nav() {
 
     //Project name container
     const projectName = document.createElement('div')
+    projectName.id = "project-name"
     projectName.classList.add('project-name')
-    projectName.innerHTML = "The Odin Project"
+    projectName.innerHTML = ""
 
     //Right side controls container
     const controlArea = document.createElement('div')

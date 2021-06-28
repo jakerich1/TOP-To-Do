@@ -18,7 +18,8 @@ export default function details() {
     titleHead.innerText = "Title"
     title.appendChild(titleHead)
     const titleContent = document.createElement('input')
-    titleContent.value = "Javascript Chapter"
+    titleContent.id = 'det-title'
+    titleContent.value = ""
     title.appendChild(titleContent)
     details.appendChild(title)
 
@@ -30,6 +31,7 @@ export default function details() {
     descTitle.innerText = "Description"
     description.appendChild(descTitle)
     const descContent = document.createElement('textarea')
+    descContent.id = 'det-desc'
     descContent.innerText = "Enter task description here"
     description.appendChild(descContent)
     details.appendChild(description)
@@ -42,7 +44,7 @@ export default function details() {
     priorityHead.innerText = "Priority"
     priority.appendChild(priorityHead)
     const priorityContent = document.createElement('input')
-    priorityContent.value = "High"
+    priorityContent.id = 'det-priority'
     priority.appendChild(priorityContent)
     details.appendChild(priority)
 
@@ -55,7 +57,7 @@ export default function details() {
     dueDate.appendChild(dueHead)
     const dueContent = document.createElement('input')
     dueContent.type = 'date'
-    dueContent.value = "2021-06-21"
+    dueContent.id = 'det-dueDate'
     dueDate.appendChild(dueContent)
 
 
