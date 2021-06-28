@@ -2,6 +2,31 @@
     padding: 1em;
     border-right: 1px solid $nav-color;
 
+    .add{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        float: right;
+        height: 45px;
+        width: 45px;
+        border-radius: 30px;
+
+        &:hover{
+           background-color: $nav-color;         
+        }
+
+        &:hover > svg{
+            stroke: $accent-color;
+        }
+
+        svg{
+            display: block;
+            height: 40px;
+            width: auto;
+        }
+    }
+
     table{
         border-spacing: 0;
         width: 100%;
