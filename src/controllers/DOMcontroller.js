@@ -53,23 +53,42 @@ const DOMcontroller = (function factory() {
                 taskArray.forEach(element => {
 
                     const row = document.createElement('tr')
-                    row.innerHTML = `<td>${element.title}</td><td>${element.priority}</td><td>${element.dueDate}</td>`
+
+                    if (element.id == content.projects[content.activeIndex()].activeTask) {
+                        row.innerHTML = `<td style="border-top: 1px solid #E4FF76; border-left: 1px solid #E4FF76; border-bottom: 1px solid #E4FF76;" >${element.title}</td><td style="border-top: 1px solid #E4FF76; border-bottom: 1px solid #E4FF76;">${element.priority}</td><td style="border-top: 1px solid #E4FF76; border-bottom: 1px solid #E4FF76;">${element.dueDate}</td>`   
+                    }else{
+                        row.innerHTML = `<td>${element.title}</td><td>${element.priority}</td><td>${element.dueDate}</td>`
+                    }
+
                     const checkbox = document.createElement(`td`)
                     const checkboxInner = document.createElement(`div`)
                     checkboxInner.classList.add(`checkbox`)
                     checkbox.appendChild(checkboxInner)
 
-                    if (element.completed) {
+                    if (element.id == content.projects[content.activeIndex()].activeTask) {
+
+                        checkbox.style.borderTop = '1px solid #E4FF76'
+                        checkbox.style.borderRight = '1px solid #E4FF76'
+                        checkbox.style.borderBottom = '1px solid #E4FF76'
+                        
+                    }
+
+                    if (element.completed) {   
                         checkboxInner.innerHTML = `<svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-check" width="44" height="44" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round"><path stroke="none" d="M0 0h24v24H0z" fill="none"/><path d="M5 12l5 5l10 -10" /></svg></div></td>`
                     }
 
                     checkbox.addEventListener('click', function () {
                         element.toggle()
                         DOMcontroller.showTasks()
-                    })
+                    })      
 
                     row.addEventListener('click', function () {
+
                         DOMcontroller.showDetails(element)
+                        let taskID = element.id
+                        content.projects[content.activeIndex()].activeTask = taskID
+                        DOMcontroller.showTasks()
+
                     })
 
                     row.appendChild(checkbox)
@@ -87,8 +106,6 @@ const DOMcontroller = (function factory() {
             const detDescription = document.querySelector('#det-desc') 
             const detPriority = document.querySelector('#det-priority') 
             const detDueDate = document.querySelector('#det-dueDate') 
-
-            console.log(element)
 
             detTitle.value = element.title
             detDescription.value = element.description

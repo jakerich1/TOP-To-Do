@@ -6,6 +6,7 @@ export class project {
         this.name = name
         this.tasks = []
         this.id = ""
+        this.activeTask = ""
 
         this.initId = function () {
             let s4 = () => {
@@ -32,8 +33,21 @@ export class project {
         return
     }
 
-    size() {
-        return this.tasks.length;
+    setActive(passedid) {
+        activeTask = passedid
+        return
+    }
+
+    checkActive(passedid) {
+        if (passedid == activeTask) {
+            return true
+        }
+        return false
+    }
+
+    activeIndex() {
+        const index = tasks.map(function(e) { return e.id; }).indexOf(activeTask)
+        return index
     }
 
 }
