@@ -1,3 +1,5 @@
+import { changeDetail } from "../controllers/listeners.js";
+
 export default function details() {
 
     //Main Projects container
@@ -22,6 +24,9 @@ export default function details() {
     titleContent.value = ""
     title.appendChild(titleContent)
     details.appendChild(title)
+    title.addEventListener('input', function () {
+        changeDetail()
+    })
 
     //Task Description
     const description = document.createElement('div')
@@ -35,6 +40,9 @@ export default function details() {
     descContent.innerText = "Enter task description here"
     description.appendChild(descContent)
     details.appendChild(description)
+    description.addEventListener('input', function () {
+        changeDetail()
+    })
 
     //Priority area
     const priority = document.createElement('div')
@@ -47,6 +55,9 @@ export default function details() {
     priorityContent.id = 'det-priority'
     priority.appendChild(priorityContent)
     details.appendChild(priority)
+    priority.addEventListener('input', function () {
+        changeDetail()
+    })
 
     //Due date area
     const dueDate = document.createElement('div')
@@ -59,6 +70,9 @@ export default function details() {
     dueContent.type = 'date'
     dueContent.id = 'det-dueDate'
     dueDate.appendChild(dueContent)
+    dueDate.addEventListener('input', function () {
+        changeDetail()
+    })
 
 
     details.appendChild(dueDate)    

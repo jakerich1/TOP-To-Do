@@ -46,6 +46,7 @@ const DOMcontroller = (function factory() {
             const taskBody = document.querySelector('#task-body')
             taskBody.innerHTML = ""
             const projectObj = content.projects[content.activeIndex()]
+            //console.log(projectObj)
             const taskArray = projectObj.tasks
 
             if (taskArray.length > 0) {
@@ -54,7 +55,7 @@ const DOMcontroller = (function factory() {
 
                     const row = document.createElement('tr')
 
-                    if (element.id == content.projects[content.activeIndex()].activeTask) {
+                    if (element.id == projectObj.activeTask) {
                         row.innerHTML = `<td style="border-top: 1px solid #E4FF76; border-left: 1px solid #E4FF76; border-bottom: 1px solid #E4FF76;" >${element.title}</td><td style="border-top: 1px solid #E4FF76; border-bottom: 1px solid #E4FF76;">${element.priority}</td><td style="border-top: 1px solid #E4FF76; border-bottom: 1px solid #E4FF76;">${element.dueDate}</td>`   
                     }else{
                         row.innerHTML = `<td>${element.title}</td><td>${element.priority}</td><td>${element.dueDate}</td>`
@@ -65,7 +66,7 @@ const DOMcontroller = (function factory() {
                     checkboxInner.classList.add(`checkbox`)
                     checkbox.appendChild(checkboxInner)
 
-                    if (element.id == content.projects[content.activeIndex()].activeTask) {
+                    if (element.id == projectObj.activeTask) {
 
                         checkbox.style.borderTop = '1px solid #E4FF76'
                         checkbox.style.borderRight = '1px solid #E4FF76'
@@ -84,11 +85,11 @@ const DOMcontroller = (function factory() {
 
                     row.addEventListener('click', function () {
 
-                        DOMcontroller.showDetails(element)
                         let taskID = element.id
                         content.projects[content.activeIndex()].activeTask = taskID
                         DOMcontroller.showTasks()
-
+                        DOMcontroller.showDetails()
+                        
                     })
 
                     row.appendChild(checkbox)
@@ -100,17 +101,24 @@ const DOMcontroller = (function factory() {
 
         },
 
-        showDetails: function (element) {
+        showDetails: function () {
             //DOM element declarations
+
+            let taskObj = content.projects[content.activeIndex()].tasks[content.projects[content.activeIndex()].activeIndex()]
+
+            if (!taskObj) {
+                taskObj = content.projects[content.activeIndex()].tasks[0]
+            }
+
             const detTitle = document.querySelector('#det-title') 
             const detDescription = document.querySelector('#det-desc') 
             const detPriority = document.querySelector('#det-priority') 
             const detDueDate = document.querySelector('#det-dueDate') 
 
-            detTitle.value = element.title
-            detDescription.value = element.description
-            detPriority.value = element.priority
-            detDueDate.value = element.dueDate
+            detTitle.value = taskObj.title
+            detDescription.value = taskObj.description
+            detPriority.value = taskObj.priority
+            detDueDate.value = taskObj.dueDate
 
         }
 

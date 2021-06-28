@@ -19,4 +19,20 @@ function createTaskListener(name, description, priority, dueDate){
 
 }
 
-export {createProjectListener, createTaskListener}
+function changeDetail() {
+
+    const taskObj = content.projects[content.activeIndex()].tasks[content.projects[content.activeIndex()].activeIndex()]
+
+    taskObj.title = document.querySelector('#det-title').value
+    taskObj.description = document.querySelector('#det-desc').value
+    taskObj.priority = document.querySelector('#det-priority').value
+    taskObj.dueDate = document.querySelector('#det-dueDate').value
+
+    DOMcontroller.showTasks()
+    DOMcontroller.showDetails()
+
+    //console.log(taskObj)
+
+}
+
+export {createProjectListener, createTaskListener, changeDetail}

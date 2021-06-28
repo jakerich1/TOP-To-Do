@@ -46,7 +46,7 @@ export class project {
     }
 
     activeIndex() {
-        const index = tasks.map(function(e) { return e.id; }).indexOf(activeTask)
+        const index = this.tasks.map(function(e) { return e.id; }).indexOf(this.activeTask)
         return index
     }
 
