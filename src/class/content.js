@@ -4,6 +4,9 @@ const content = (function factory() {
 
     let projects = []
     let activeProject = ""
+    let sortTitle = 0
+    let sortPriority = 0
+    let sortDue = 0
 
     function returnProjects() {
         return projects
@@ -42,6 +45,9 @@ const content = (function factory() {
 
     return {
 
+        sortTitle: sortTitle,
+        sortPriority: sortPriority,
+        sortDue: sortDue,
         activeProject: activeProject,
         projects: projects,
         returnProjects: returnProjects,

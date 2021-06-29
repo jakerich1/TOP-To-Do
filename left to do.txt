@@ -1,5 +1,3 @@
-Table sorting
-
 Method to manage local storage
 
 Create github pages 

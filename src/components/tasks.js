@@ -1,5 +1,5 @@
 import {
-    createTaskListener, deleteTask
+    createTaskListener, deleteTask, sortTitle, sortPriority, sortDue
 } from "../controllers/listeners.js";
 
 export default function tasks() {
@@ -107,12 +107,25 @@ export default function tasks() {
     thPriority.innerHTML = "Priority"
     const thDue = document.createElement('th')
     thDue.innerHTML = "Due Date"
+
     thr.appendChild(thTask)
     thr.appendChild(thPriority)
     thr.appendChild(thDue)
     thr.appendChild(document.createElement('th'))
     thead.appendChild(thr)
     table.appendChild(thead)
+
+    thTask.addEventListener('click', function () {
+        sortTitle()
+    })
+
+    thPriority.addEventListener('click', function () {
+        sortPriority()
+    })
+
+    thDue.addEventListener('click', function () {
+        sortDue()
+    })
 
     //Placeholder table rows
     const tbody = document.createElement('tbody')

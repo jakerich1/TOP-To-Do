@@ -60,4 +60,49 @@ function deleteTask() {
 
 }
 
-export {createProjectListener, createTaskListener, changeDetail, deleteProject, deleteTask}
+function sortTitle() {
+
+    let taskArray = content.projects[content.activeIndex()].tasks
+    content.sortTitle = !content.sortTitle
+
+    if (content.sortTitle) { 
+        taskArray = taskArray.sort((a,b) => (a.title > b.title) ? -1 : ((b.title > a.title) ? 1 : 0))
+    }else{
+        taskArray = taskArray.sort((a,b) => (a.title > b.title) ? 1 : ((b.title > a.title) ? -1 : 0))
+    }
+
+    DOMcontroller.showTasks()
+
+}
+
+function sortPriority() {
+
+    let taskArray = content.projects[content.activeIndex()].tasks
+    content.sortPriority = !content.sortPriority
+
+    if (content.sortPriority) { 
+        taskArray = taskArray.sort((a,b) => (a.priority > b.priority) ? -1 : ((b.priority > a.priority) ? 1 : 0))
+    }else{
+        taskArray = taskArray.sort((a,b) => (a.priority > b.priority) ? 1 : ((b.priority > a.priority) ? -1 : 0))
+    }
+
+    DOMcontroller.showTasks()
+    
+}
+
+function sortDue() {
+    
+    let taskArray = content.projects[content.activeIndex()].tasks
+    content.sortDue = !content.sortDue
+
+    if (content.sortDue) { 
+        taskArray = taskArray.sort((a,b) => (a.dueDate > b.dueDate) ? -1 : ((b.dueDate > a.dueDate) ? 1 : 0))
+    }else{
+        taskArray = taskArray.sort((a,b) => (a.dueDate > b.dueDate) ? 1 : ((b.dueDate > a.dueDate) ? -1 : 0))
+    }
+
+    DOMcontroller.showTasks()
+
+}
+
+export {createProjectListener, createTaskListener, changeDetail, deleteProject, deleteTask, sortTitle, sortPriority, sortDue}
