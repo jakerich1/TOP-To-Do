@@ -1,7 +1,5 @@
 Task deletion
 
-Project deletion
-
 Table sorting
 
 Method to manage local storage

@@ -1,59 +1,86 @@
-.project-area{
+.project-area {
 
     padding: 1em;
     border-right: 1px solid $nav-color;
 
-    .head{
+    .head {
         display: flex;
         justify-content: space-between;
         align-items: center;
         border-bottom: 1px solid $nav-color;
         padding-bottom: 0.5em;
 
-        .head-text{
+        .head-text {
             font-size: 16px;
             font-weight: 600;
         }
 
-        .add-project{
-            background: $background-color;
-            border-radius: 600px;
-            cursor: pointer;
-            transition: all 0.2s;
+        .head-control {
+            display: flex;
 
-            &:hover{
-                background: $nav-color;
-            }
+            .delete-project {
+                background: $background-color;
+                border-radius: 600px;
+                cursor: pointer;
+                transition: all 0.2s;
 
-            svg{
-                display: block;
-                height: 30px;
-                width: auto;
+                &:hover {
+                    background: $nav-color;
+                }
 
-                &:hover{
-                    stroke: $accent-color;
+                svg {
+                    display: block;
+                    height: 30px;
+                    width: auto;
+
+                    &:hover {
+                        stroke: $danger-color;
+                    }
                 }
             }
+
+            .add-project {
+                background: $background-color;
+                border-radius: 600px;
+                cursor: pointer;
+                transition: all 0.2s;
+
+                &:hover {
+                    background: $nav-color;
+                }
+
+                svg {
+                    display: block;
+                    height: 30px;
+                    width: auto;
+
+                    &:hover {
+                        stroke: $accent-color;
+                    }
+                }
+            }
+
         }
+
     }
 
-    ul{
+    ul {
         list-style-type: none;
         padding-top: 0.5em;
 
-        .active{
+        .active {
             border: 1px solid $accent-color;
-            
+
         }
 
-        li{
+        li {
             padding: 0.5em 0 0.5em 0.5em;
             margin-bottom: 0.25em;
             border-radius: 5px;
             cursor: pointer;
             background-color: $background-color;
 
-            &:hover{
+            &:hover {
                 filter: brightness(1.5);
             }
         }
