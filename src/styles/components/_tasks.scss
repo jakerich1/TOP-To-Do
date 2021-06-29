@@ -2,29 +2,60 @@
     padding: 1em;
     border-right: 1px solid $nav-color;
 
-    .add{
+    .task-control{
         display: flex;
-        align-items: center;
-        justify-content: center;
-        cursor: pointer;
-        float: right;
-        height: 45px;
-        width: 45px;
-        border-radius: 30px;
+        justify-content: flex-end;
 
-        &:hover{
-           background-color: $nav-color;         
+        .remove{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            float: right;
+            height: 45px;
+            width: 45px;
+            border-radius: 30px;
+    
+            &:hover{
+               background-color: $nav-color;         
+            }
+    
+            &:hover > svg{
+                stroke: $danger-color;
+            }
+    
+            svg{
+                display: block;
+                height: 40px;
+                width: auto;
+            }
         }
 
-        &:hover > svg{
-            stroke: $accent-color;
+        .add{
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            float: right;
+            height: 45px;
+            width: 45px;
+            border-radius: 30px;
+    
+            &:hover{
+               background-color: $nav-color;         
+            }
+    
+            &:hover > svg{
+                stroke: $accent-color;
+            }
+    
+            svg{
+                display: block;
+                height: 40px;
+                width: auto;
+            }
         }
 
-        svg{
-            display: block;
-            height: 40px;
-            width: auto;
-        }
     }
 
     table{

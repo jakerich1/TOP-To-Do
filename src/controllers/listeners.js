@@ -37,9 +37,7 @@ function changeDetail() {
 
 function deleteProject() {
     
-
     if (content.projects.length > 0) {
-        
         
         const projectObj = content.projects[content.activeIndex()]
         content.removeProject(projectObj)
@@ -51,4 +49,15 @@ function deleteProject() {
 
 }
 
-export {createProjectListener, createTaskListener, changeDetail, deleteProject}
+function deleteTask() {
+
+    const projectObj = content.projects[content.activeIndex()]
+    const taskObj = projectObj.tasks[projectObj.activeIndex()]
+
+    projectObj.removeTask(taskObj)
+    DOMcontroller.showTasks()
+    DOMcontroller.blankDetails()
+
+}
+
+export {createProjectListener, createTaskListener, changeDetail, deleteProject, deleteTask}

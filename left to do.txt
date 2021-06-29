@@ -1,5 +1,7 @@
-Task deletion
-
 Table sorting
 
 Method to manage local storage
+
+Create github pages 
+
+Submit project

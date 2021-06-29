@@ -29,7 +29,7 @@ export class project {
     }
 
     removeTask(task) {
-        tasks.splice(tasks.indexOf(task), 1)
+        this.tasks.splice(this.tasks.indexOf(task), 1)
         return
     }
 
