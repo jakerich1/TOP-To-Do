@@ -1,6 +1,7 @@
 import {
     createTaskListener, deleteTask, sortTitle, sortPriority, sortDue
 } from "../controllers/listeners.js";
+import content from "../class/content"
 
 export default function tasks() {
 

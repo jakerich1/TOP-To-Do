@@ -52,6 +52,7 @@ const DOMcontroller = (function factory() {
             if (typeof projectObj !== "undefined") {
 
                 let taskArray = projectObj.tasks
+
                 if (taskArray.length > 0) {
 
                     taskArray.forEach(element => {

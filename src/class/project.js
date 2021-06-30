@@ -1,4 +1,6 @@
 import { task } from './task';
+import content from "./content"
+
 //Project class
 export class project {
 
@@ -25,16 +27,19 @@ export class project {
     addTask(name, description, priority, dueDate) {
         let ntask = new task(name, description, priority, dueDate)
         this.tasks.push(ntask)
+        content.setStorage()
         return
     }
 
     removeTask(task) {
         this.tasks.splice(this.tasks.indexOf(task), 1)
+        content.setStorage()
         return
     }
 
     setActive(passedid) {
         activeTask = passedid
+        content.setStorage()
         return
     }
 

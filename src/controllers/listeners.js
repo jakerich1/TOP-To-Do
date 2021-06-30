@@ -13,7 +13,12 @@ function createProjectListener(name){
 
 function createTaskListener(name, description, priority, dueDate){
 
+    console.log(content)
+
     const projectObj = content.projects[content.activeIndex()]
+
+
+
     projectObj.addTask(name, description, priority, dueDate)
     DOMcontroller.showTasks()
 

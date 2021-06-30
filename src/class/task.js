@@ -1,3 +1,5 @@
+import content from "./content"
+
 export class task {
 
     constructor(title, description, priority, dueDate){
@@ -24,6 +26,7 @@ export class task {
     //Methods
     toggle() {
         this.completed = !this.completed
+        content.setStorage()
         return
     }
 
